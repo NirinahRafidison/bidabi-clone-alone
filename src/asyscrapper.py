@@ -7,11 +7,11 @@ from aiohttp import ClientSession, ClientTimeout
 API_URL = "https://world.openfoodfacts.org/cgi/search.pl"
 HEADERS = {"User-Agent": "MyAwesomeApp/1.0"}
 
-OUTPUT_DIR = "data"
+OUTPUT_DIR = "data/raw"
 
-CATEGORY = "sugar" #"bread", "milk", "champagnes", "butter" 
-TARGET_COUNT = 180
-PAGE_SIZE = 100
+CATEGORY = "cheese" #"bread", "milk", "champagnes", "butter" 
+TARGET_COUNT = 50
+PAGE_SIZE = 20
 MAX_PAGES = 50
 
 MAX_CONCURRENT_REQUESTS = 10
@@ -62,11 +62,11 @@ async def fetch_page(session, category, page, page_size, sem):
     }
 
     async with sem:
-        try:
+       try:
             async with session.get(API_URL, params=params) as resp:
                 data = await resp.json()
                 return data.get("products", [])
-        except Exception as e:
+       except Exception as e:
             print(f"⚠ Erreur API page {page} :", e)
             return []
 
@@ -74,28 +74,30 @@ async def fetch_page(session, category, page, page_size, sem):
 # -------------------------
 # Async image download
 # -------------------------
-async def download_image(session, url, image_id, sem, folder="data/images/sugar"):
+async def download_image(session, url, image_id, sem, category):
     if not url:
-        return
+        return None
 
+    folder = f"data/raw/images/{category}"
     os.makedirs(folder, exist_ok=True)
-
-    ext = url.split(".")[-1].split("?")[0]
-    filename = os.path.join(folder, f"{image_id}.{ext}")
-
-    if os.path.exists(filename):
-        return
 
     async with sem:
         try:
-            async with session.get(url) as resp:
-                content = await resp.read()
-                with open(filename, "wb") as f:
-                    f.write(content)
+            headers = {
+                "User-Agent": "Mozilla/5.0"
+            }
+
+            async with session.get(url, headers=headers) as response:
+                if response.status == 200:
+                    file_path = f"{folder}/{image_id}.jpg"
+                    with open(file_path, "wb") as f:
+                        f.write(await response.read())
+                    return file_path
+
         except Exception as e:
-            print(f"⚠ Impossible de télécharger {url} :", e)
+            print(f"Erreur téléchargement image {image_id}: {e}")
 
-
+    return None
 # -------------------------
 # Main scraping logic
 # -------------------------
@@ -126,8 +128,8 @@ async def scrape(category, target_count, page_size, max_pages):
                     image_id = info[0]
 
                     task = asyncio.create_task(
-                        download_image(session, image_url, image_id, sem_img)
-                    )
+                        download_image(session, image_url, image_id, sem_img, category)
+                     )
                     image_tasks.append(task)
 
                     if len(valid_products) >= target_count:
