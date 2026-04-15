@@ -1,0 +1,9 @@
+aiohttp
+matplotlib
+numpy
+requests
+scikit-learn
+seaborn
+torch
+torchvision
+urllib3
