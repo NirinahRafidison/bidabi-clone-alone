@@ -14,15 +14,6 @@
   <img src="https://img.shields.io/badge/PyTorch-DeepLearning-red">
   <img src="https://img.shields.io/badge/DVC-DataVersioning-green">
 </p>
-![Typing SVG](https://readme-typing-svg.herokuapp.com?color=00F7FF&lines=End-to-End+ML+Pipeline;PyTorch+%7C+DVC+%7C+Git)
-
----
-
-![Python](https://img.shields.io/badge/Python-3.12-blue)
-![PyTorch](https://img.shields.io/badge/PyTorch-DeepLearning-red)
-![DVC](https://img.shields.io/badge/DVC-DataVersioning-green)
-
----
 
 ## 📖 Overview
 
