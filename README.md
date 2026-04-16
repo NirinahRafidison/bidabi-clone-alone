@@ -1,4 +1,4 @@
-# 🚀 Bidabi — Machine Learning Pipeline
+# Bidabi — Machine Learning Pipeline
 
 ![Typing SVG](https://readme-typing-svg.herokuapp.com?color=00F7FF&lines=End-to-End+ML+Pipeline;PyTorch+%7C+DVC+%7C+Git)
 
@@ -7,49 +7,111 @@
 
 ---
 
+![Python](https://img.shields.io/badge/Python-3.12-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-DeepLearning-red)
+![DVC](https://img.shields.io/badge/DVC-DataVersioning-green)
+
+---
+
 ## 📖 Overview
-This project implements a complete and reproducible ML pipeline.
 
-Dépôt pédagogique du cours **Big Data and Business Intelligence (BIDABI)**.  
-Ce projet a pour objectif d’initier les étudiants au travail avec du code open‑source, à l’adaptation de projets existants et à la création de leur propre jeu de données d’images.
+This project implements a complete and reproducible machine learning pipeline for image classification.
 
-## 🎯 Objectif du dépôt
-Ce dépôt sert de **plateforme d’apprentissage** où les étudiants réalisent un cycle complet de travail en data et en machine learning :
+The goal is to build a system capable of recognizing food products (such as bread, milk, and butter) from images.
 
-- cloner un projet open‑source depuis GitHub
-- analyser sa structure, ses dépendances et son fonctionnement
-- adapter le code à un nouveau contexte
-- créer un jeu de données d’images personnalisé
-- intégrer ce jeu de données dans un pipeline ML existant
+The project follows an end-to-end workflow including data preparation, dataset versioning, model training, and reproducibility using MLOps practices.
 
-L’objectif est de reproduire des situations réelles rencontrées par les ingénieurs data et ML lorsqu’ils doivent réutiliser et modifier du code provenant d’autres développeurs.
+---
 
-## 🎓 Public visé
-Ce projet est destiné aux étudiants du cours **BIDABI**, notamment ceux qui s’intéressent à :
+## ⚙️ Project Structure
+.
+├── data/
+│ └── raw/ # RAW dataset (versioned with DVC)
+├── src/
+│ ├── asyscrapper.py # Data collection script
+│ └── train.py # Training pipeline
+├── model.pth # Trained model (versioned with DVC)
+├── requirements.txt
+└── README.md
 
-- l’apprentissage automatique
-- l’ingénierie des données
-- la reproductibilité des expériences
-- l’utilisation de GitHub et des projets open‑source
 
-## 🧩 Contenu du dépôt
-Le dépôt inclura :
+---
 
-- des exemples de code à analyser et adapter
-- un modèle de structure pour le jeu de données
-- des consignes pour les travaux pratiques
-- des instructions pour exécuter et modifier le projet
+## 🔄 Machine Learning Pipeline
 
-## 🛠️ Compétences développées
-Les étudiants apprendront à :
+The pipeline includes the following steps:
 
-- lire et comprendre du code écrit par d’autres
-- manipuler des dépôts GitHub
-- concevoir et organiser un jeu de données d’images
-- intégrer des données dans un pipeline ML
-- documenter leur travail de manière claire et reproductible
+- Dataset creation and structuring (image classification dataset)
+- Data versioning using DVC
+- Splitting dataset into train / validation / test sets (70/20/10)
+- Data augmentation (resize, horizontal flip, tensor conversion)
+- Training a deep learning model (ResNet18)
+- Monitoring training and validation loss
+- Saving the best trained model
 
-## 📄 Licence et usage
-Ce dépôt est destiné **exclusivement à des fins pédagogiques** dans le cadre du cours BIDABI.  
-Le code et les ressources peuvent être simplifiés ou modifiés pour faciliter l’apprentissage.
+---
+
+## 📦 Dataset
+
+- Dataset format:
+- 
+---
+
+## 🔄 Machine Learning Pipeline
+
+The pipeline includes the following steps:
+
+- Dataset creation and structuring (image classification dataset)
+- Data versioning using DVC
+- Splitting dataset into train / validation / test sets (70/20/10)
+- Data augmentation (resize, horizontal flip, tensor conversion)
+- Training a deep learning model (ResNet18)
+- Monitoring training and validation loss
+- Saving the best trained model
+
+---
+
+## 📦 Dataset
+
+- Dataset format:
+data/raw/images/<category>/
+
+
+- Categories:
+- bread
+- milk
+- butter
+
+- The dataset is:
+- structured in RAW format
+- versioned using DVC
+- reproducible across environments
+
+---
+
+## 🤖 Model
+
+- Model: ResNet18 (pretrained on ImageNet)
+- Task: Image classification
+- Output file: `model.pth`
+- Versioning: handled using DVC (`model.pth.dvc`)
+
+The model is trained on the dataset and saved automatically during training.
+
+---
+
+## 🔁 Reproducibility
+
+To reproduce the project:
+
+```bash
+git clone <your-repo-url>
+cd bidabi-clone-alone
+
+pip install -r requirements.txt
+dvc pull
+
+python src/train.py
+
+
 
