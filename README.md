@@ -52,12 +52,6 @@ The pipeline includes the following steps:
 
 ---
 
-## 📦 Dataset
-
-- Dataset format:
-- 
----
-
 ## 🔄 Machine Learning Pipeline
 
 The pipeline includes the following steps:
@@ -74,7 +68,17 @@ The pipeline includes the following steps:
 
 ## 📦 Dataset
 
-- Dataset format: 
+- Dataset format:
+data/raw/images/
+├── bread/
+│ ├── 0.jpg
+│ ├── 1.jpg
+├── milk/
+│ ├── 0.jpg
+│ ├── 1.jpg
+├── butter/
+├── 0.jpg
+├── 1.jpg
 
 - Categories:
 - bread
