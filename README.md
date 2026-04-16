@@ -2,9 +2,6 @@
 
 ![Typing SVG](https://readme-typing-svg.herokuapp.com?color=00F7FF&lines=End-to-End+ML+Pipeline;PyTorch+%7C+DVC+%7C+Git)
 
-![Stars](https://img.shields.io/github/stars/username/repo)
-![Forks](https://img.shields.io/github/forks/username/repo)
-
 ---
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
