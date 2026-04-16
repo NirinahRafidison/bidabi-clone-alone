@@ -1,5 +1,14 @@
-# bidabi-clone-adapt-create
-# BIDABI : Clone → Adapt → Create
+# 🚀 Bidabi — Machine Learning Pipeline
+
+![Typing SVG](https://readme-typing-svg.herokuapp.com?color=00F7FF&lines=End-to-End+ML+Pipeline;PyTorch+%7C+DVC+%7C+Git)
+
+![Stars](https://img.shields.io/github/stars/username/repo)
+![Forks](https://img.shields.io/github/forks/username/repo)
+
+---
+
+## 📖 Overview
+This project implements a complete and reproducible ML pipeline.
 
 Dépôt pédagogique du cours **Big Data and Business Intelligence (BIDABI)**.  
 Ce projet a pour objectif d’initier les étudiants au travail avec du code open‑source, à l’adaptation de projets existants et à la création de leur propre jeu de données d’images.
