@@ -36,7 +36,6 @@ The project follows an end-to-end workflow including data preparation, dataset v
 ├── requirements.txt
 └── README.md
 
-
 ---
 
 ## 🔄 Machine Learning Pipeline
