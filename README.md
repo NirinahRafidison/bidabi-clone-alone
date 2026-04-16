@@ -1,3 +1,18 @@
+</div>
+
+<img alt="GIF" src="Resources/banner.gif" />
+<div align="center">
+  
+[![Stars](https://img.shields.io/github/stars/shsarv/Machine-Learning-Projects?style=flat&logo=starship&color=f4d03f&labelColor=1a1a2e)](https://github.com/shsarv/Machine-Learning-Projects/stargazers)
+[![Forks](https://img.shields.io/github/forks/shsarv/Machine-Learning-Projects?style=flat&logo=git&color=27ae60&labelColor=1a1a2e)](https://github.com/shsarv/Machine-Learning-Projects/forks)
+[![Contributors](https://img.shields.io/github/contributors/shsarv/Machine-Learning-Projects?style=flat&logo=github&color=8e44ad&labelColor=1a1a2e)](https://github.com/shsarv/Machine-Learning-Projects/graphs/contributors)
+[![Issues](https://img.shields.io/github/issues/shsarv/Machine-Learning-Projects?style=flat&logo=bugsnag&color=e74c3c&labelColor=1a1a2e)](https://github.com/shsarv/Machine-Learning-Projects/issues)
+[![License](https://img.shields.io/github/license/shsarv/Machine-Learning-Projects?style=flat&logo=opensourceinitiative&color=1abc9c&labelColor=1a1a2e)](LICENSE.md)
+[![Last Commit](https://img.shields.io/github/last-commit/shsarv/Machine-Learning-Projects?style=flat&logo=github-actions&color=3498db&labelColor=1a1a2e)](https://github.com/shsarv/Machine-Learning-Projects/commits/main)
+
+</div>
+<div align="center">
+
 # bidabi-clone-adapt-create
 # BIDABI : Clone → Adapt → Create
 
