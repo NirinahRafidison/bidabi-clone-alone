@@ -70,9 +70,7 @@ The pipeline includes the following steps:
 
 ## 📦 Dataset
 
-- Dataset format:
-data/raw/images/<category>/
-
+- Dataset format: 
 
 - Categories:
 - bread
