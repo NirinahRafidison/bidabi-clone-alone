@@ -1,14 +1,3 @@
-
-</div>
-
-<h2>Project Overview</h2> 
-<p align="justify"><b>A curated portfolio of 26 end-to-end machine learning projects</b> — spanning healthcare AI, real-time computer vision, NLP chatbots, time series forecasting, and classical ML. Each project applies theory to a practical problem, with several fully deployed as web and GUI applications.
-</p>
-<h2>📊 Repository at a Glance</h2> 
-<div align="center">
-
-</div>
-
 # bidabi-clone-adapt-create
 # BIDABI : Clone → Adapt → Create
 
