@@ -4,12 +4,12 @@ import csv
 import os
 from aiohttp import ClientSession, ClientTimeout
 
-API_URL = "https://world.openfoodfacts.org/cgi/search.pl"
+API_URL = "http://world.openfoodfacts.org/cgi/search.pl"
 HEADERS = {"User-Agent": "MyAwesomeApp/1.0"}
 
 OUTPUT_DIR = "data/raw"
 
-CATEGORY = "cheese" #"bread", "milk", "champagnes", "butter" 
+CATEGORY = "cheese"  # change: "bread", "milk", "butter"
 TARGET_COUNT = 50
 PAGE_SIZE = 20
 MAX_PAGES = 50
@@ -62,11 +62,11 @@ async def fetch_page(session, category, page, page_size, sem):
     }
 
     async with sem:
-       try:
+        try:
             async with session.get(API_URL, params=params) as resp:
                 data = await resp.json()
                 return data.get("products", [])
-       except Exception as e:
+        except Exception as e:
             print(f"⚠ Erreur API page {page} :", e)
             return []
 
@@ -78,14 +78,13 @@ async def download_image(session, url, image_id, sem, category):
     if not url:
         return None
 
+    # ✅ CORRECTION IMPORTANTE
     folder = f"data/raw/images/{category}"
     os.makedirs(folder, exist_ok=True)
 
     async with sem:
         try:
-            headers = {
-                "User-Agent": "Mozilla/5.0"
-            }
+            headers = {"User-Agent": "Mozilla/5.0"}
 
             async with session.get(url, headers=headers) as response:
                 if response.status == 200:
@@ -98,6 +97,8 @@ async def download_image(session, url, image_id, sem, category):
             print(f"Erreur téléchargement image {image_id}: {e}")
 
     return None
+
+
 # -------------------------
 # Main scraping logic
 # -------------------------
@@ -129,7 +130,7 @@ async def scrape(category, target_count, page_size, max_pages):
 
                     task = asyncio.create_task(
                         download_image(session, image_url, image_id, sem_img, category)
-                     )
+                    )
                     image_tasks.append(task)
 
                     if len(valid_products) >= target_count:
@@ -145,6 +146,8 @@ async def scrape(category, target_count, page_size, max_pages):
 # CSV export
 # -------------------------
 def save_to_csv(filename, rows):
+    os.makedirs("data/raw", exist_ok=True)  # ✅ sécurité
+
     with open(filename, "w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
         writer.writerow(["foodId", "label", "category", "foodContentsLabel", "image"])
@@ -156,8 +159,12 @@ def save_to_csv(filename, rows):
 # -------------------------
 def main():
     products = asyncio.run(scrape(CATEGORY, TARGET_COUNT, PAGE_SIZE, MAX_PAGES))
-    output_file = f"{OUTPUT_DIR}/metadata_{CATEGORY}_{TARGET_COUNT}.csv"
+
+    # ✅ CORRECTION IMPORTANTE (chemin conforme TP)
+    output_file = f"data/raw/metadata_{CATEGORY}_{TARGET_COUNT}.csv"
+
     save_to_csv(output_file, products)
+
     print(f"✔ Fichier {output_file} créé. Produits valides collectés : {len(products)}")
 
 
