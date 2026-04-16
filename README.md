@@ -1,5 +1,19 @@
-# Bidabi — Machine Learning Pipeline
+<h1 align="center">
+✨🚀 Bidabi — Machine Learning Pipeline 🚀✨
+</h1>
 
+<p align="center">
+  <img src="https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif" width="200">
+</p>
+
+<p align="center">
+  <b>End-to-End Machine Learning Pipeline with PyTorch & DVC</b>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.12-blue">
+  <img src="https://img.shields.io/badge/PyTorch-DeepLearning-red">
+  <img src="https://img.shields.io/badge/DVC-DataVersioning-green">
+</p>
 ![Typing SVG](https://readme-typing-svg.herokuapp.com?color=00F7FF&lines=End-to-End+ML+Pipeline;PyTorch+%7C+DVC+%7C+Git)
 
 ---
