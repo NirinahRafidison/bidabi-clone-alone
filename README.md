@@ -1,3 +1,5 @@
+<div align="center">
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=32&duration=3000&pause=1000&color=00C9FF&center=true&vCenter=true&width=700&lines=Machine+Learning+Projects;Deep+Learning+%7C+NLP+%7C+Computer+Vision;End-to-End+Deployable+Applications" alt="Typing SVG" />
 </div>
 
 <img alt="GIF" src="Resources/banner.gif" />
@@ -12,6 +14,22 @@
 
 </div>
 <div align="center">
+
+[🌐 Live Website](https://shsarv.github.io/Machine-Learning-Projects/) &nbsp;·&nbsp; [🐛 Report Bug](https://github.com/shsarv/Machine-Learning-Projects/issues) &nbsp;·&nbsp; [✨ Request Feature](https://github.com/shsarv/Machine-Learning-Projects/issues)
+
+</div>
+
+<h2>Project Overview</h2> 
+<p align="justify"><b>A curated portfolio of 26 end-to-end machine learning projects</b> — spanning healthcare AI, real-time computer vision, NLP chatbots, time series forecasting, and classical ML. Each project applies theory to a practical problem, with several fully deployed as web and GUI applications.
+</p>
+<h2>📊 Repository at a Glance</h2> 
+<div align="center">
+
+| 📁 Projects | 🏷️ Domains | 🚀 Deployed Apps | 🖥️ GUI Apps | ⭐ GitHub Stars |
+|:-----------:|:----------:|:---------------:|:-----------:|:--------------:|
+| **26** | **6** | **5** | **3** | **1.3k+** |
+
+</div>
 
 # bidabi-clone-adapt-create
 # BIDABI : Clone → Adapt → Create
